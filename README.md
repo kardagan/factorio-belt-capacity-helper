@@ -117,10 +117,37 @@ Installé dans `~/.factorio/mods/BeltCapacityHelper` par lien symbolique, donc
 toute modification ici est prise en compte au prochain lancement.
 
 ```bash
-make test     # vérif syntaxe + tests de calcul
-make icons    # régénère graphics/belt-capacity-x{56,24}.png
-make package  # zip distribuable
+make test     # vérif syntaxe + validation des locales + tests de calcul
+make icons    # régénère les icônes et la vignette du portail
+make package  # les deux zips distribuables (Factorio 2.0 et 2.1)
+make clean    # supprime build/
 ```
+
+### Versionnement et double cible
+
+Le code est identique pour Factorio 2.0 et 2.1 : seul `info.json` change
+(`factorio_version` et le plancher de dépendance `base`). `make package` dérive
+donc **deux archives d'une même source**.
+
+Le **minor encode le canal de jeu** :
+
+| Minor | Canal | Exemple |
+|---|---|---|
+| pair (0, 2, 4…) | Factorio 2.0 — c'est la version canonique dans `info.json` | `0.2.0` |
+| impair (1, 3, 5…) | Factorio 2.1 — dérivé automatiquement en minor + 1 | `0.3.0` |
+
+- Un **correctif** bump le patch des deux côtés : `0.2.0 → 0.2.1` et
+  `0.3.0 → 0.3.1`. Le patch reste donc libre sur chaque canal.
+- Une **feature** doit avancer le minor canonique **d'au moins 2**
+  (`0.2.x → 0.4.x`), sinon le 2.1 dérivé (`0.5.x`) réutiliserait un minor impair
+  déjà publié (`0.3.x`).
+
+`make package` refuse un minor canonique impair, qui casserait la convention
+silencieusement. Quand le support de 2.0 sera abandonné, il suffira de retirer
+la cible correspondante dans `tests/make_package.py` et le mod reprendra un
+versionnement continu.
+
+Même schéma que `smart-train-combinator`.
 
 Les icônes du raccourci et des sélecteurs sont générées par script
 (`tests/make_icons.py`) plutôt que dessinées à la main : deux variantes pour le

@@ -1,7 +1,7 @@
 LUA_FILES := control.lua data.lua settings.lua scripts/belts.lua scripts/gui.lua \
              scripts/rates.lua prototypes/styles.lua
 
-.PHONY: help test lint install package icons
+.PHONY: help test lint install package icons clean
 
 help: ## Show the available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
@@ -24,11 +24,8 @@ install: ## Symlink the mod into ~/.factorio/mods
 	@ln -sfn $(CURDIR) $(HOME)/.factorio/mods/BeltCapacityHelper
 	@echo "linked $(HOME)/.factorio/mods/BeltCapacityHelper -> $(CURDIR)"
 
-package: test ## Build the distributable zip
-	@VERSION=$$(python3 -c "import json;print(json.load(open('info.json'))['version'])"); \
-	NAME="BeltCapacityHelper_$$VERSION"; \
-	rm -rf build && mkdir -p "build/$$NAME"; \
-	cp -r info.json control.lua data.lua settings.lua scripts prototypes locale graphics thumbnail.png LICENSE README.md "build/$$NAME/"; \
-	(cd build && zip -qr "$$NAME.zip" "$$NAME"); \
-	python3 tests/check_package.py "build/$$NAME.zip"; \
-	echo "build/$$NAME.zip"
+package: test ## Build both distributable zips (Factorio 2.0 and 2.1)
+	@python3 tests/make_package.py
+
+clean: ## Remove the build directory
+	@rm -rf build && echo "build/ removed"
