@@ -1,0 +1,13 @@
+# Build output (make package)
+build/
+
+# Editor / OS noise
+*.swp
+*~
+.DS_Store
+.idea/
+.vscode/
+
+# Python bytecode from the test helpers
+__pycache__/
+*.pyc

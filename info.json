@@ -1,0 +1,10 @@
+{
+  "name": "BeltCapacityHelper",
+  "version": "0.1.0",
+  "title": "Belt Capacity Helper",
+  "author": "kardagan",
+  "factorio_version": "2.0",
+  "description": "Shows how many machines a single belt can feed, for the machine you have open. Reads the real entity, so modules, beacons, quality and productivity are already accounted for. Supports every belt tier from any mod.",
+  "homepage": "https://github.com/kardagan/factorio-belt-capacity-helper",
+  "dependencies": ["base >= 2.0.0"]
+}
