@@ -29,5 +29,6 @@ package: test ## Build the distributable zip
 	NAME="BeltCapacityHelper_$$VERSION"; \
 	rm -rf build && mkdir -p "build/$$NAME"; \
 	cp -r info.json control.lua data.lua settings.lua scripts prototypes locale graphics thumbnail.png LICENSE README.md "build/$$NAME/"; \
-	cd build && zip -qr "$$NAME.zip" "$$NAME"; \
+	(cd build && zip -qr "$$NAME.zip" "$$NAME"); \
+	python3 tests/check_package.py "build/$$NAME.zip"; \
 	echo "build/$$NAME.zip"
