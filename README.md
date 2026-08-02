@@ -6,6 +6,8 @@ A quality-of-life mod for Factorio 2.0 and 2.1. Open the machine, press
 **Alt + N**, and read the number for every belt tier you own — no external
 calculator, no configuration.
 
+![The window, open on an assembler](docs/overview.png)
+
 - Reads the **live entity**, so modules, beacons, quality and productivity are
   already baked into the numbers — nothing is recomputed by hand.
 - Discovers belt tiers from the **runtime prototypes**, so every modded belt

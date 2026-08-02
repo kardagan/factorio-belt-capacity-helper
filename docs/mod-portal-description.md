@@ -4,21 +4,15 @@
   raw.githubusercontent.com (les chemins relatifs ne fonctionnent pas sur le portail).
   Les URLs supposent que les fichiers docs/*.png sont poussés sur la branche `main`.
   À la prochaine release, mets simplement ce fichier à jour et recolle-le.
-
-  À FAIRE avant publication : prendre docs/overview.png (une capture de la
-  fenêtre ouverte sur une machine, idéalement une recette à 2-3 ingrédients
-  solides pour que le tableau et la colonne Machines soient lisibles).
-  Tant que le fichier n'est pas poussé sur main, le lien ci-dessous est mort :
-  soit tu ajoutes la capture, soit tu retires la ligne avant de coller.
 -->
 
 **Ever wondered how many assemblers a single belt can actually feed?**
 
-You are staring at a fresh green-circuit block, you know one belt of copper wire will not be enough, and the only way to find out is to alt-tab to a calculator — or guess, build it, and watch the last three machines starve.
+You are staring at a fresh iron-gear block, you know one belt of iron plate will not be enough, and the only way to find out is to alt-tab to a calculator — or guess, build it, and watch the last three machines starve.
 
 Belt Capacity Helper answers it in place. Open the machine, press **Alt + N**, and read the number for every belt tier you own.
 
-![The window, on a green circuit assembler](https://raw.githubusercontent.com/kardagan/factorio-belt-capacity-helper/main/docs/overview.png)
+![The window, open on an assembler](https://raw.githubusercontent.com/kardagan/factorio-belt-capacity-helper/main/docs/overview.png)
 
 ## Why it is accurate
 
