@@ -4,7 +4,9 @@
   "title": "Belt Capacity Helper",
   "author": "kardagan",
   "factorio_version": "2.0",
-  "description": "Shows how many machines a single belt can feed, for the machine you have open. Reads the real entity, so modules, beacons, quality and productivity are already accounted for. Supports every belt tier from any mod.",
+  "description": "Ever wondered how many assemblers a single belt can feed? Open the machine, press Alt+N, and read the answer for every belt tier. Reads the live entity, so modules, beacons, quality and productivity are already accounted for. Per-ingredient lane and stacking controls, and every modded belt tier is discovered automatically.",
   "homepage": "https://github.com/kardagan/factorio-belt-capacity-helper",
-  "dependencies": ["base >= 2.0.0"]
+  "dependencies": [
+    "base >= 2.0.0"
+  ]
 }

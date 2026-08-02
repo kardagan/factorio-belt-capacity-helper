@@ -1,10 +1,10 @@
 # Belt Capacity Helper
 
-A quality-of-life mod for Factorio 2.0 that answers, in game, the question you
-ask fifty times per save: **how many machines can one belt feed?**
+**Ever wondered how many assemblers a single belt can actually feed?**
 
-Open a crafting machine, press **Alt + N**, and read the answer for every belt
-tier at once. No external calculator, no configuration.
+A quality-of-life mod for Factorio 2.0 and 2.1. Open the machine, press
+**Alt + N**, and read the number for every belt tier you own — no external
+calculator, no configuration.
 
 - Reads the **live entity**, so modules, beacons, quality and productivity are
   already baked into the numbers — nothing is recomputed by hand.
@@ -17,7 +17,11 @@ tier at once. No external calculator, no configuration.
   optional planning mode behind a padlock.
 - English and French.
 
-**License:** MIT · **Factorio:** 2.0
+**License:** MIT · **Factorio:** 2.0 and 2.1
+
+The text to paste into the mod portal lives in
+[`docs/mod-portal-description.md`](docs/mod-portal-description.md) — same content
+as this README's intro, but with absolute image URLs, which the portal requires.
 
 *La documentation ci-dessous est en français.*
 
